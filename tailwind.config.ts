@@ -34,6 +34,13 @@ const config: Config = {
         laptop: '1024px',
         desktop: '1280px',
       },
+      transitionDelay: {
+        900: '900ms',
+        1100: '1100ms',
+        1300: '1300ms',
+        1500: '1500ms',
+        1700: '1700ms',
+      },
     },
   },
   plugins: [],

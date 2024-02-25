@@ -68,7 +68,7 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
             </Link>
             <div className="w-full flex justify-end laptop:hidden">
               <button
-                className="h-5 w-8 z-200 relative bg-transparent before:absolute before:w-full before:rounded-full before:bg-white before:top-0 before:left-0 before:block before:h-hamburger after:absolute after:w-full after:rounded-full after:bg-white after:bottom-0 after:left-0 after:block after:h-hamburger"
+                className="h-4 w-8 z-200 relative bg-transparent before:absolute before:w-full before:rounded-full before:bg-white before:top-0 before:left-0 before:block before:h-hamburger after:absolute after:w-full after:rounded-full after:bg-white after:bottom-0 after:left-0 after:block after:h-hamburger"
                 onClick={() => {
                   toggleMobileMenu()
                 }}
@@ -139,28 +139,61 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
           </div>
           <div className="w-full mt-8 text-white text-2xl font-semibold">
             <ul className="w-full text-left">
-              <li className="mb-4">
-                <Link href="/leagues/halton">Halton Roller</Link>
+              <li className="py-2">
+                <Link
+                  href="/leagues/halton"
+                  className={`inline-block w-full transition-all duration-300 delay-300 ${mobileMenuOpen ? 'opacity-100 ' : 'opacity-0'}`}
+                >
+                  Halton Roller
+                </Link>
               </li>
-              <li className="mb-4">
-                <Link href="/leagues/mississauga">Mississauga Roller</Link>
+              <li className="py-2">
+                <Link
+                  href="/leagues/mississauga"
+                  className={`inline-block w-full transition-all duration-300 delay-500 ${mobileMenuOpen ? 'opacity-100 ' : 'opacity-0'}`}
+                >
+                  Mississauga Roller
+                </Link>
               </li>
-              <li className="mb-4">
-                <Link href="/leagues/kitchener-waterloo">
+              <li className="py-2">
+                <Link
+                  href="/leagues/kitchener-waterloo"
+                  className={`inline-block w-full transition-all duration-300 delay-700 ${mobileMenuOpen ? 'opacity-100 ' : 'opacity-0'}`}
+                >
                   Kitchener/Waterloo Roller
                 </Link>
               </li>
-              <li className="mb-4">
-                <Link href="/leagues/kitchener-waterloo">Why Roller?</Link>
+              <li className="py-2">
+                <Link
+                  href="/leagues/kitchener-waterloo"
+                  className={`inline-block w-full transition-all duration-300 delay-900 ${mobileMenuOpen ? 'opacity-100 ' : 'opacity-0'}`}
+                >
+                  Why Roller?
+                </Link>
               </li>
-              <li className="mb-4">
-                <Link href="/leagues/kitchener-waterloo">About Us</Link>
+              <li className="py-2">
+                <Link
+                  href="/leagues/kitchener-waterloo"
+                  className={`inline-block w-full transition-all duration-300 delay-1100 ${mobileMenuOpen ? 'opacity-100 ' : 'opacity-0'}`}
+                >
+                  About Us
+                </Link>
               </li>
-              <li className="mb-4">
-                <Link href="/leagues/kitchener-waterloo">Contact Us</Link>
+              <li className="py-2">
+                <Link
+                  href="/leagues/kitchener-waterloo"
+                  className={`inline-block w-full transition-all duration-300 delay-1300 ${mobileMenuOpen ? 'opacity-100 ' : 'opacity-0'}`}
+                >
+                  Contact Us
+                </Link>
               </li>
-              <li className="mb-4">
-                <Link href="/leagues/kitchener-waterloo">Shop</Link>
+              <li className="py-2">
+                <Link
+                  href="/leagues/kitchener-waterloo"
+                  className={`transition-all duration-500 delay-1700 ${mobileMenuOpen ? 'opacity-100 ' : 'opacity-0'}`}
+                >
+                  Shop
+                </Link>
               </li>
             </ul>
           </div>
