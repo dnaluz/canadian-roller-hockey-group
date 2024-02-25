@@ -16,6 +16,9 @@ const config: Config = {
       padding: {
         hero: '46.5%',
       },
+      height: {
+        hamburger: '3px',
+      },
       zIndex: {
         '200': '200',
       },
