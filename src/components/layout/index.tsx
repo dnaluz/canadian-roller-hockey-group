@@ -134,16 +134,14 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
             <div className="w-full mt-8 text-white text-2xl font-semibold">
               <ul className="w-full text-left">
                 <li className="mb-4">
-                  <Link href="/leagues/halton">Halton Roller Hockey</Link>
+                  <Link href="/leagues/halton">Halton Roller</Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="/leagues/mississauga">
-                    Mississauga Roller Hockey
-                  </Link>
+                  <Link href="/leagues/mississauga">Mississauga Roller</Link>
                 </li>
                 <li className="mb-4">
                   <Link href="/leagues/kitchener-waterloo">
-                    Kitchener/Waterloo Roller Hockey
+                    Kitchener/Waterloo Roller
                   </Link>
                 </li>
                 <li className="mb-4">
