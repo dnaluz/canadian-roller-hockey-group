@@ -24,7 +24,7 @@ const ImageGrid = ({ images, background }: ImageGrid) => {
       {images.map((item, index) => {
         return (
           <a
-            className={`${index + 1 < imageCount ? 'w-1/2' : 'w-full'} h-full group relative after:absolute after:top-0 after:block after:left-0 after:h-full after:w-full after:bg-black after:opacity-30 hover:after:opacity-0 after:transition-opacity after:transition-duration-300 hover:cursor-pointer`}
+            className={`${index + 1 < imageCount ? 'laptop:w-1/2' : 'w-full'} h-full group relative after:absolute after:top-0 after:block after:left-0 after:h-full after:w-full after:bg-black after:opacity-30 hover:after:opacity-0 after:transition-opacity after:transition-duration-300 hover:cursor-pointer`}
             key={`${item.title}-${index}`}
           >
             <Image
@@ -39,7 +39,7 @@ const ImageGrid = ({ images, background }: ImageGrid) => {
               height={600}
             />
 
-            <div className="opacity-0 group-hover:opacity-65 absolute bottom-0 left-0 block w-full bg-black text-white p-2 text-sm font-semibold transition-opacity transition-duration-300">
+            <div className="opacity-0 group-hover:opacity-65 absolute bottom-0 left-0 block w-full bg-black text-white p-2 text-xs laptop:text-sm font-semibold transition-opacity transition-duration-300">
               {item.title}
             </div>
           </a>

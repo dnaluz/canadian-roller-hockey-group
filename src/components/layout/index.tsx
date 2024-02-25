@@ -121,7 +121,7 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
               onClick={() => {
                 toggleMobileMenu()
               }}
-              className="ml-auto mr-0 h-4"
+              className="ml-auto mr-0 h-3"
             >
               <svg
                 fill="#ffffff"
