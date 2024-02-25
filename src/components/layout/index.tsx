@@ -19,8 +19,10 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
     setMobileMenuOpen(!mobileMenuOpen)
     if (!mobileMenuOpen) {
       document.body.classList.add('overflow-y-hidden')
+      document.documentElement.classList.add('overflow-y-hidden')
     } else {
       document.body.classList.remove('overflow-y-hidden')
+      document.documentElement.classList.remove('overflow-y-hidden')
     }
   }
 
@@ -47,7 +49,7 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
     <>
       <header>
         <nav
-          className={`fixed w-full z-200 px-4 tablet:px-16 duration-250 transition-all before:absolute before:block before:bg-red-700 before:h-full before:transition-all before:duration-250 before:left-0 before:w-full ${navBackground}`}
+          className={`fixed w-full z-200 px-4 laptop:px-16 duration-250 transition-all before:absolute before:block before:bg-red-700 before:h-full before:transition-all before:duration-250 before:left-0 before:w-full ${navBackground}`}
         >
           <div className="flex flex-row text-white items-center relative z-200">
             <Link href="/" className="py-2">
@@ -74,7 +76,7 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
                 <div className="before:w-full rounded-full bg-white h-hamburger"></div>
               </button>
             </div>
-            <ul className="hidden tablet:flex ml-auto mr-0 flex-row text-xs desktop:text-sm font-medium tracking-wide">
+            <ul className="hidden laptop:flex ml-auto mr-0 flex-row text-xs desktop:text-sm font-medium tracking-wide">
               <li className="mx-2 relative">
                 <a
                   onClick={() => setLeagueMenuOpen(!leagueMenuOpen)}
@@ -112,53 +114,56 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
           </div>
         </nav>
         <div
-          className={`p-4 z-200 w-full h-screen laptop:hidden bg-red-700 transition-all duration-700 ${mobileMenuOpen ? 'translate-x-0 fixed overscroll-contain' : 'absolute translate-x-full'}`}
+          className={`p-8 z-200 w-full h-screen laptop:hidden absolute bg-red-700 transition-all duration-700 ${mobileMenuOpen ? 'translate-x-0 overscroll-contain' : ' -translate-x-full'}`}
         >
-          <button
-            onClick={() => {
-              toggleMobileMenu()
-            }}
-          >
-            <svg
-              fill="#ffffff"
-              height="15px"
-              width="15px"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 460.775 460.775"
+          <div className="w-full h-4 flex flex-row justify-end">
+            <button
+              onClick={() => {
+                toggleMobileMenu()
+              }}
+              className="ml-auto mr-0 h-4"
             >
-              <g strokeWidth="0"></g>
-              <g strokeLinecap="round" strokeLinejoin="round"></g>
-              <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55 c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55 c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505 c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55 l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719 c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"></path>{' '}
-            </svg>
-            <div className="w-full mt-8 text-white text-2xl font-semibold">
-              <ul className="w-full text-left">
-                <li className="mb-4">
-                  <Link href="/leagues/halton">Halton Roller</Link>
-                </li>
-                <li className="mb-4">
-                  <Link href="/leagues/mississauga">Mississauga Roller</Link>
-                </li>
-                <li className="mb-4">
-                  <Link href="/leagues/kitchener-waterloo">
-                    Kitchener/Waterloo Roller
-                  </Link>
-                </li>
-                <li className="mb-4">
-                  <Link href="/leagues/kitchener-waterloo">Why Roller?</Link>
-                </li>
-                <li className="mb-4">
-                  <Link href="/leagues/kitchener-waterloo">About Us</Link>
-                </li>
-                <li className="mb-4">
-                  <Link href="/leagues/kitchener-waterloo">Contact Us</Link>
-                </li>
-                <li className="mb-4">
-                  <Link href="/leagues/kitchener-waterloo">Shop</Link>
-                </li>
-              </ul>
-            </div>
-          </button>
+              <svg
+                fill="#ffffff"
+                height="18px"
+                width="18px"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 460.775 460.775"
+              >
+                <g strokeWidth="0"></g>
+                <g strokeLinecap="round" strokeLinejoin="round"></g>
+                <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55 c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55 c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505 c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55 l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719 c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"></path>{' '}
+              </svg>
+            </button>
+          </div>
+          <div className="w-full mt-8 text-white text-2xl font-semibold">
+            <ul className="w-full text-left">
+              <li className="mb-4">
+                <Link href="/leagues/halton">Halton Roller</Link>
+              </li>
+              <li className="mb-4">
+                <Link href="/leagues/mississauga">Mississauga Roller</Link>
+              </li>
+              <li className="mb-4">
+                <Link href="/leagues/kitchener-waterloo">
+                  Kitchener/Waterloo Roller
+                </Link>
+              </li>
+              <li className="mb-4">
+                <Link href="/leagues/kitchener-waterloo">Why Roller?</Link>
+              </li>
+              <li className="mb-4">
+                <Link href="/leagues/kitchener-waterloo">About Us</Link>
+              </li>
+              <li className="mb-4">
+                <Link href="/leagues/kitchener-waterloo">Contact Us</Link>
+              </li>
+              <li className="mb-4">
+                <Link href="/leagues/kitchener-waterloo">Shop</Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </header>
       <main className={` min-h-screen ${inter.className}`}>{children}</main>
